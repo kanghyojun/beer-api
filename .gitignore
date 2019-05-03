@@ -1,0 +1,9 @@
+*.egg-info
+
+*.pyc
+
+.DS_Store
+
+*.swp
+
+conf/*.json

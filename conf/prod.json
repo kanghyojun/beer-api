@@ -1,0 +1,39 @@
+{
+    "web": {
+        "ENV": "development",
+        "DEBUG": false,
+        "SECRET_KEY": "Hp1Stf6U/L97RA=="
+    },
+    "database": {
+        "url": "postgresql://postgres:postgres@pg:5432/api"
+    },
+    "logging": {
+        "version": 1,
+        "formatters": {
+            "verbose": {
+                "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
+            },
+            "simple": {
+                "format": "%(levelname)s %(message)s"
+            }
+        },
+        "handlers": {
+            "console": {
+                "level": "DEBUG",
+                "class": "logging.StreamHandler",
+                "formatter": "simple"
+            },
+            "normal": {
+                "level": "DEBUG",
+                "class": "logging.StreamHandler",
+                "formatter": "verbose"
+            }
+        },
+        "loggers": {
+            "alembic": {
+                "handlers": ["normal"],
+                "level": "INFO"
+            }
+        }
+    }
+}
