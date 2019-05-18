@@ -3,6 +3,10 @@ import argparse
 import pathlib
 import logging.config
 
+from tornado.httpserver import HTTPServer
+from tornado.ioloop import IOLoop
+from tornado.wsgi import WSGIContainer
+
 from api.config import Environment, load_configuration
 from api.wsgi import create_wsgi
 
@@ -57,7 +61,14 @@ def main():
     if options.environment == Environment.dev:
         wsgi.run(debug=options.debug, port=options.port)
     else:
-        raise NotImplementedError('production server')
+        container = WSGIContainer(wsgi_app)
+        http_server = HTTPServer(container)
+        http_server.bind(options.port, options.host)
+        try:
+            http_server.start(0)
+            IOLoop.current().start()
+        except KeyboardInterrupt:
+            raise SystemExit
 
 
 if __name__ == '__main__':
