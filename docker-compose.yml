@@ -7,8 +7,8 @@ services:
     volumes:
       - "/var/lib/postgres"
     environment:
-      - POSTGRES_DB=api
-  api:
+      - POSTGRES_DB=beer
+  beer:
     build: .
     ports:
       - "8000:8000"

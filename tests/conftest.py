@@ -7,9 +7,9 @@ from flask import Flask
 from pytest import fixture
 from typeguard import typechecked
 
-from api.config import Conf
-from api.orm import Base, Session, create_engine
-from api.wsgi import create_wsgi
+from beer.config import Conf
+from beer.orm import Base, Session, create_engine
+from beer.wsgi import create_wsgi
 
 
 def pytest_addoption(parser):

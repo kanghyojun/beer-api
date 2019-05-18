@@ -7,8 +7,8 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.wsgi import WSGIContainer
 
-from api.config import Environment, load_configuration
-from api.wsgi import create_wsgi
+from beer.config import Environment, load_configuration
+from beer.wsgi import create_wsgi
 
 __all__ = 'main',
 

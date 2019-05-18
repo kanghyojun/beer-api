@@ -36,7 +36,7 @@ class AlembicConfig(Config):
 
     def __init__(self, conf: Conf, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.api_config = conf
+        self.app_config = conf
         self.set_main_option('script_location', 'migrations')
         self.set_main_option('sqlalchemy.url', conf['database']['url'])
         self.set_main_option('url', conf['database']['url'])

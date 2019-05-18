@@ -1,7 +1,7 @@
 from flask import Flask
 from typeguard import typechecked
 
-from api import __version__
+from beer import __version__
 
 
 @typechecked

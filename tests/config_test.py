@@ -4,7 +4,7 @@ import pathlib
 from pytest import fixture, raises
 from typeguard import typechecked
 
-from api.config import Environment, iter_env_configs, load_configuration
+from beer.config import Environment, iter_env_configs, load_configuration
 
 
 @fixture

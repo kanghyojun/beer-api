@@ -4,7 +4,7 @@ import typing
 
 from alembic.config import CommandLine
 
-from api.config import AlembicConfig, Environment, load_configuration
+from beer.config import AlembicConfig, Environment, load_configuration
 
 __all__ = 'AlembicCommand',
 
@@ -17,7 +17,7 @@ class AlembicCommand(CommandLine):
             '-e',
             '--environment',
             type=Environment,
-            help='An api environment.',
+            help='An beer-api environment.',
             required=True
         )
 
